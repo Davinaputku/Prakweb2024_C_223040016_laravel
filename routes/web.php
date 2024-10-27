@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about', ['nama' => 'Davina Putri']);
+    return view('about', ['nama' => 'Davina Putri Kusuma']);
 });
 
 Route::get('/blog', function () {
