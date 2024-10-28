@@ -1,8 +1,11 @@
 <?php
+
 namespace Database\Seeders;
+
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 class CategorySeeder extends Seeder
 {
     /**
@@ -12,20 +15,24 @@ class CategorySeeder extends Seeder
     {
         //Category::factory(3)->create(),
         Category::create([
-                'name' => 'Web Design',
-                'slug' => 'web-design',
+            'name' => 'Web Design',
+            'slug' => 'web-design',
+            'color' => 'red',
         ]);
         Category::create([
             'name' => 'UI UX',
             'slug' => 'ui-ux',
-    ]);        
-    Category::create([
-        'name' => 'Mechine Learning',
-        'slug' => 'machine-learning',
-    ]);
-    Category::create([
-        'name' => 'Data Structures',
-        'slug' => 'data-structures',
-    ]);
+            'color' => 'green',
+        ]);
+        Category::create([
+            'name' => 'Mechine Learning',
+            'slug' => 'machine-learning',
+            'color' => 'blue',
+        ]);
+        Category::create([
+            'name' => 'Data Structures',
+            'slug' => 'data-structures',
+            'color' => 'yellow',
+        ]);
     }
 }
