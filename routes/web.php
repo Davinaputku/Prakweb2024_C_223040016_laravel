@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use function Laravel\Prompts\search;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -16,8 +17,11 @@ Route::get('/about', function () {
 Route::get('/posts', function () {
     // melakukan query dengan eager loading
     // $posts = Post::with(['author', 'category'])->latest()->get();
-    $posts = Post::latest()->get();
-    return view('posts', ['title' => 'Blog', 'posts' => $posts]);
+    // $posts = Post::latest();
+    // if(request('search')){
+    //     $posts->where('title', 'like', '%' . request('search') . '%');
+    // }
+    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()]);
 });
 
 Route::get('/posts/{pots:slug}', function (Post $post) {
