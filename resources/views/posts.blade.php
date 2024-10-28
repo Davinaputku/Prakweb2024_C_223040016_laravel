@@ -88,6 +88,5 @@
             @endforelse
         </div>
     </div>
-
-    @endforeach
+    {{ $posts->links() }}
 </x-layout>
